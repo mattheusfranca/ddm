@@ -2,6 +2,7 @@ package com.example.ciclovidaandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,10 +14,14 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private static String Tag = "TelaPrincipal";
+
+    private Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        context = this;
+
         Log.i(Tag, "onCreate");
 
         Button btnEntrar = findViewById(R.id.btnEntrar);
@@ -31,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if(login.equals("ddm") && senha.equals("123")){
                     Intent intent = new Intent(v.getContext(), Tela2.class);
+                    intent.putExtra("usuario", "ddm");
                     startActivity(intent);
-
                 }
                 else {
                     Toast.makeText(v.getContext(), "Dados incorretos", Toast.LENGTH_SHORT).show();
