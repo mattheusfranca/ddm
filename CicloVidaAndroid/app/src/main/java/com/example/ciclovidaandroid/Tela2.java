@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Tela2 extends AppCompatActivity implements View.OnClickListener {
@@ -65,6 +66,8 @@ public class Tela2 extends AppCompatActivity implements View.OnClickListener {
     }
 
     public void acaoBtn7(View v) {
+        TextView textView = findViewById(R.id.textView);
+        textView.setText("Clique Btn7");
         Toast.makeText(this, "Clique no Btn7", Toast.LENGTH_SHORT).show();
     }
 
